@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Projects | David Alanis</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+        <div id="wrapper">
+            <header id="header">
+                <a href="index.html" class="logo">David Alanis</a>
+            </header>
+
+            <nav id="nav">
+                <ul class="links">
+                    <li><a href="index.html">Resume</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li class="active"><a href="projects.html">Projects</a></li>
+                </ul>
+                <ul class="icons">
+                    <li><a href="mailto:dalanisv1.0@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    <li><a href="https://github.com/davalanisv1" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+            </nav>
+
+            <div id="main">
+                <section class="post">
+                    <header class="major">
+                        <h1>Engineering &<br />
+                        Code Projects</h1>
+                        <p>A look at my technical builds, from physics-based programming <br />
+                        to competitive robotics assembly.</p>
+                    </header>
+
+                    <h2>Black Hole Evaporation & Mass Calculator</h2>
+                    <div class="box">
+                        <p>I wrote this Python tool to calculate the physical properties of a black hole based on user-input mass. Instead of just showing abstract numbers, the program uses <strong>Regular Expressions</strong> to handle various units and converts energy release into real-world scales like "Tsar Bombas" and "Hiroshima Bombs" to provide perspective on the magnitude of the physics involved.</p>
+                        
+                        <pre><code># Energy comparison logic from blackholecalc.py
+def convert_energy(energy):
+    # Comparing energy to the Tsar Bomba (50 Megatons of TNT)
+    TSAR_BOMBA_YIELD = 50e3 * 4.184e9 
+    tsar_bombas = energy / TSAR_BOMBA_YIELD
+    
+    return tsar_bombas
+
+print(f"Energy released is equivalent to {tsar_bombas:.3f} Tsar Bombas.")</code></pre>
+                        
+                        <ul class="actions">
+                            <li>
+                                <button onclick="forceDownload('blackholecalc.py')" class="button icon solid fa-download">Download .py File</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <hr />
+
+                    <h2>Robostangs (FIRST Robotics)</h2>
+                    <div class="row gtr-30 gtr-uniform">
+                        <div class="col-6 col-12-small">
+                            <h3>Mechanical Assembly</h3>
+                            <p>As a member of the <strong>Mechanical Team</strong>, I assemble competitive robots, ensuring that hardware holds up under the high-intensity environment of FIRST Robotics competitions.</p>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <h3>CAD & Prototyping</h3>
+                            <p>I utilize mechanical engineering principles and CAD design to help visualize and build robot components that solve specific game challenges.</p>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <h2>KIA STEM Leadership</h2>
+                    <p>During my time at Liceo de Apodaca, I served as a co-leader for a student team in the <strong>KIA STEM program</strong>. We researched and delivered a professional presentation on engineering challenges. This experience was key in developing my ability to communicate technical concepts to a professional audience.</p>
+                
+                    <ul class="actions special">
+                        <li><a href="Equipo 23_ Liceo de Apodaca.pdf" class="button large" download>Download PDF Presentation</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <footer id="footer">
+                <section class="split contact">
+                    <section>
+                        <h3>Technical Toolkit</h3>
+                        <p>Python (Regex, Math), C++, C#, Java, Mechanical Assembly, CAD Design.</p>
+                    </section>
+                    <section>
+                        <h3>Contact</h3>
+                        <p><a href="mailto:dalanisv1.0@gmail.com">dalanisv1.0@gmail.com</a></p>
+                    </section>
+                </section>
+            </footer>
+
+            <div id="copyright">
+                <ul><li>&copy; David Alanis</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+            </div>
+        </div>
+
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+        <script>
+        function forceDownload(url) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.blob();
+                })
+                .then(blob => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = url;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                })
+                .catch(() => {
+                    // Fallback for local testing
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = url;
+                    link.click();
+                });
+        }
+        </script>
+    </body>
+</html>
